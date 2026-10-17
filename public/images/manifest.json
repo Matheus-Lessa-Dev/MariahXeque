@@ -1,0 +1,146 @@
+[
+  {
+    "original": "CB31E977-5BAC-443F-8A08-4396C45AD14E.png",
+    "output": "public/images/mariah-brincos.webp",
+    "description": "Retrato com blusa verde e brincos dourados",
+    "width": 1086,
+    "height": 1448,
+    "bytes": 228452
+  },
+  {
+    "original": "F7CAFAAF-0AD4-41C5-83A9-AC2BC6431D80.png",
+    "output": "public/images/mariah-colares.webp",
+    "description": "Retrato sorrindo e segurando colares coloridos",
+    "width": 1086,
+    "height": 1448,
+    "bytes": 262436
+  },
+  {
+    "original": "Brinco Íris.png",
+    "output": "public/images/brinco-iris.webp",
+    "description": "Brincos vermelhos e mostarda em cartela",
+    "width": 1086,
+    "height": 1448,
+    "bytes": 114132
+  },
+  {
+    "original": "Brincos.png",
+    "output": "public/images/brincos-artesanais.webp",
+    "description": "Cartelas de brincos sobre bancada, com planta e bolsa ao fundo",
+    "width": 1086,
+    "height": 1448,
+    "bytes": 217084
+  },
+  {
+    "original": "Brincos_.png",
+    "output": "public/images/brincos-flores.webp",
+    "description": "Cartelas de brincos florais em rosa e marrom",
+    "width": 1086,
+    "height": 1448,
+    "bytes": 125860
+  },
+  {
+    "original": "Colar pérolas.png",
+    "output": "public/images/colar-perolas.webp",
+    "description": "Colar de pérolas claras com detalhes dourados",
+    "width": 1086,
+    "height": 1448,
+    "bytes": 255638
+  },
+  {
+    "original": "Bracelete Ramona_.png",
+    "output": "public/images/braceletes.webp",
+    "description": "Braceletes azul, bege e verde sobre bancada",
+    "width": 1086,
+    "height": 1448,
+    "bytes": 178644
+  },
+  {
+    "original": "080240A6-EE59-4E6C-AF9A-BE2108E76797.png",
+    "output": "public/images/mariah-perfil.webp",
+    "description": "Retrato de perfil com blusa branca e brinco longo",
+    "width": 1086,
+    "height": 1448,
+    "bytes": 163202
+  },
+  {
+    "original": "90fd1edb-8864-4d84-a6b0-7e2a294472d3.jpg",
+    "output": "public/images/curso-glow.webp",
+    "description": "Capa oficial Brinco Glow",
+    "width": 1280,
+    "height": 720,
+    "bytes": 121364
+  },
+  {
+    "original": "E149C443-1651-4AB2-9514-D9EB5FB4A93F.png",
+    "output": "public/images/curso-flowers.webp",
+    "description": "Capa oficial Flowers",
+    "width": 1440,
+    "height": 810,
+    "bytes": 210058
+  },
+  {
+    "original": "d830ff5c-3582-4a88-a73d-dfde3e8deb67.jpg",
+    "output": "public/images/curso-colares.webp",
+    "description": "Capa oficial Colares em Fios",
+    "width": 1280,
+    "height": 720,
+    "bytes": 122836
+  },
+  {
+    "original": "ca2972a3-64b1-4f82-94e4-0b1abec6d635.jpg",
+    "output": "public/images/curso-iris.webp",
+    "description": "Capa oficial Brinco Íris",
+    "width": 1280,
+    "height": 720,
+    "bytes": 125510
+  },
+  {
+    "original": "9e960c77-1ba1-4768-a764-acb40990c20e.jpg",
+    "output": "public/images/curso-liz.webp",
+    "description": "Capa oficial Brinco Liz",
+    "width": 1280,
+    "height": 720,
+    "bytes": 134294
+  },
+  {
+    "original": "2737ecf5-ad90-40ec-bd26-ea7771edac19.jpg",
+    "output": "public/images/curso-eloa-camelia.webp",
+    "description": "Capa oficial Eloá e Camélia",
+    "width": 1280,
+    "height": 720,
+    "bytes": 158824
+  },
+  {
+    "original": "60c3931c-dd9e-47d3-8e04-88ced18e324b.jpg",
+    "output": "public/images/curso-elo-folha-esther.webp",
+    "description": "Capa oficial Elo, Folha e Esther",
+    "width": 1280,
+    "height": 720,
+    "bytes": 165734
+  },
+  {
+    "original": "790acb95-692c-433a-9ec8-d3cbdfa3e2af.jpg",
+    "output": "public/images/curso-karol.webp",
+    "description": "Capa oficial Brinco Karol",
+    "width": 1280,
+    "height": 720,
+    "bytes": 105926
+  },
+  {
+    "original": "592c4423-f435-46f4-aeea-9286562bc164.jpg",
+    "output": "public/images/curso-ariel.webp",
+    "description": "Capa oficial Colar Ariel",
+    "width": 1280,
+    "height": 720,
+    "bytes": 142328
+  },
+  {
+    "original": "DB66020D-A60C-4A23-8E2E-C4B8D062C2DB.png",
+    "output": "public/images/curso-fios-em-festa.webp",
+    "description": "Capa oficial Fios em Festa",
+    "width": 1440,
+    "height": 810,
+    "bytes": 221778
+  }
+]

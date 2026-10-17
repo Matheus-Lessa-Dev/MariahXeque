@@ -1,0 +1,290 @@
+CONTEXTO E INSTRUÇÕES PARA O CODEX
+PÁGINA DE VENDAS — SUPER COMBO DE CROCHÊ | MARIAH XEQUE
+
+1. MISSÃO
+
+Reconstrua completamente a página de vendas do Super Combo de Crochê da Mariah Xeque. Entregue uma página funcional, elegante, responsiva e pronta para revisão, com foco em apresentar as peças, explicar o conteúdo do combo e facilitar a compra.
+
+Referência da página existente:
+https://nextwave.copilotoempresas.com.br/mariah-xeque-lp-copy/
+
+A referência serve para identidade, conteúdo e imagens. A nova página deve ter uma composição própria e mais consistente. Não é necessário reproduzir os problemas, as duplicações de cursos ou os conteúdos provisórios da página atual.
+
+2. ARQUIVOS DISPONÍVEIS
+
+A pasta inicial terá apenas:
+- Este arquivo TXT.
+- Uma pasta IMG contendo todas as imagens disponíveis.
+
+Comece examinando todos os arquivos de IMG. Identifique visualmente retratos da professora, brincos, colares, peças sendo utilizadas, bastidores, capas dos cursos, logos e possíveis depoimentos. Não escolha imagens apenas pelo nome do arquivo.
+
+Use os arquivos reais disponíveis. Preserve proporções e qualidade, escolha recortes adequados e evite cortar rostos ou detalhes importantes das peças. Não invente uma logo nem substitua fotografias reais por imagens genéricas.
+
+Se houver imagens semelhantes ou repetidas, selecione as melhores. Não é necessário colocar todas as imagens na página. Se uma imagem não tiver contexto claro, não atribua a ela curso, nome de produto ou resultado sem confirmação.
+
+Crie os arquivos e a estrutura necessários para implementar o site. A pasta IMG e o TXT são os insumos iniciais, não uma limitação sobre os arquivos que você pode criar. Se o ambiente já fornecer uma stack, utilize-a; caso contrário, escolha uma solução simples e adequada a uma landing page, sem backend desnecessário. Preserve uma pasta de imagens organizada e caminhos válidos.
+
+3. PRODUTO E POSICIONAMENTO
+
+Marca/professora: Mariah Xeque.
+Produto: Super Combo de Crochê.
+Proposta: ensinar a criar brincos, colares e acessórios de crochê, desenvolvendo técnica, acabamento e possibilidades de comercialização.
+Tom: acolhedor, claro, profissional e confiante.
+Idioma: português brasileiro.
+
+Falar de aprendizado, criatividade, autoestima, conquista e possibilidade de renda. Não prometer faturamento, vendas diárias ou resultados garantidos.
+
+Nomeie o produto de forma consistente. Caso os materiais oficiais indiquem outro nome comercial, use o nome confirmado nesses materiais.
+
+4. IDENTIDADE VISUAL EXTRAÍDA DO CSS DA PÁGINA DE REFERÊNCIA
+
+TIPOGRAFIA
+Títulos: Georgia, "Times New Roman", serif.
+Peso predominante: 400.
+Textos e interfaces: Arial, Helvetica, sans-serif.
+Pesos: 400 para textos, 600 para etiquetas e 700 para botões.
+
+A página carrega Roboto e Roboto Slab pelo Elementor, mas os componentes personalizados definem Georgia e Arial. A referência principal deve ser Georgia + Arial.
+
+ESCALA ATUAL, COMO REFERÊNCIA
+Título principal desktop: clamp(52px, 5.4vw, 78px).
+Entrelinha do título principal: 0.98.
+Espaçamento entre letras: -0.045em.
+Títulos de seção desktop: aproximadamente 42px a 72px.
+Títulos de seção mobile: aproximadamente 39px a 44px.
+Títulos de cursos: aproximadamente 20px a 23px.
+Textos: aproximadamente 14px a 16px, com entrelinha de 1.6 a 1.75.
+Etiquetas: aproximadamente 9px a 11px, maiúsculas e espaçamento de 0.15em a 0.25em.
+Botões: aproximadamente 12px a 14px, Arial, peso 700.
+
+Essas medidas descrevem o código existente, não uma obrigação de repetição. Aumente textos pequenos, ajuste títulos e mantenha leitura confortável em telas estreitas. Evite entrelinhas apertadas que causem sobreposição ou corte.
+
+CORES ENCONTRADAS
+Fundos escuros:
+#0C0C0B — seção inicial.
+#0D0D0C — seções de combo e benefícios.
+#0C0C0C — catálogo.
+#171716 — oferta final.
+#22211F — cards da oferta.
+#292825 — superfície complementar.
+
+Fundos claros:
+#EEE4D6 — cursos.
+#EEE5D8 — professora.
+#DED1C0 — creme complementar.
+
+Textos claros:
+#EEE7DD — seção inicial.
+#EEE5D9 — seções escuras.
+#F1E8DC — oferta.
+
+Textos escuros:
+#171614 — sobre creme.
+#11100E — apresentação da professora.
+#45413B — parágrafos sobre fundo claro.
+
+Textos secundários:
+#AAA39A — sobre fundo escuro.
+#68635C — sobre fundo claro.
+#9B958D — benefícios.
+
+Dourados:
+#C6A05A — destaque e botão inicial.
+#BD8D3D — cursos.
+#C39A57 — combo.
+#B88A43 — professora.
+#C49A54 — catálogo.
+#C99B4D — oferta.
+#D5B56F — hover do botão inicial.
+#DFB76C — dourado claro da oferta.
+
+Bordas:
+rgba(238,229,217,0.16) — sobre fundo escuro.
+rgba(17,16,14,0.16) — sobre fundo claro.
+rgba(201,155,77,0.25) — borda dourada.
+
+TOKENS RECOMENDADOS PARA PADRONIZAR A RECONSTRUÇÃO
+--background-dark: #0C0C0B;
+--background-light: #EEE4D6;
+--surface-dark: #22211F;
+--text-light: #EEE7DD;
+--text-dark: #171614;
+--text-muted-dark: #AAA39A;
+--text-muted-light: #68635C;
+--accent-gold: #C6A05A;
+--accent-gold-hover: #D5B56F;
+
+Esses tokens são uma proposta de consolidação das variações existentes.
+
+DIREÇÃO ESTÉTICA
+Editorial, artesanal e sofisticada. Alternar fundos escuros e creme com intenção. Usar dourado em destaques, linhas, ícones e botões. Valorizar títulos serifados de peso regular e fotografias reais das peças.
+
+Criar hierarquia clara, alinhamentos consistentes e respiro. Evitar excesso de cards iguais, ornamentos, brilhos, sombras pesadas e animações chamativas. A personalidade deve vir da tipografia, das imagens e da composição.
+
+5. CONTEÚDOS OBRIGATÓRIOS
+
+Organize os conteúdos abaixo em uma sequência de venda coerente. Itens relacionados podem compartilhar uma seção; não é necessário criar uma seção isolada para cada item.
+
+- Apresentação do Super Combo.
+- Cursos e técnicas incluídos.
+- Quantidade de aulas e modelos.
+- Lista de materiais.
+- Fotos dos brincos e colares.
+- Bastidores da produção.
+- Apresentação da professora.
+- Público para quem o curso é indicado.
+- Funcionamento das aulas e do suporte.
+- Depoimentos de alunas.
+- Preço e formas de pagamento.
+- Tempo de acesso ao curso.
+- Garantia e reembolso.
+- Prazo da promoção, se houver.
+- Botões de compra.
+- Perguntas frequentes.
+- Contato.
+- Termos de uso e política de privacidade.
+- Encomendas personalizadas.
+
+6. REFERÊNCIA DE CONTEÚDO PARA CADA BLOCO
+
+ABERTURA
+Apresentar rapidamente o que é o produto, para quem serve e qual aprendizado oferece.
+Sugestão de mensagem: "Aprenda a criar brincos e colares de crochê com acabamento que encanta."
+Complemento: "Conheça o Super Combo e desenvolva suas habilidades com aulas passo a passo."
+Usar uma imagem forte das peças e um CTA claro.
+
+APRESENTAÇÃO DO COMBO
+Explicar a proposta de reunir cursos e técnicas em uma jornada de aprendizado.
+Apresentar apenas conteúdos confirmados como integrantes da oferta.
+
+CURSOS E TÉCNICAS
+O roteiro fornecido menciona brincos, colares, técnicas com miçangas, acabamento profissional e dicas de venda.
+A página de referência mostra os nomes Brinco Glow, Curso Colares em fios e Curso Flowers.
+Esses nomes foram observados na página; confirmar quais fazem parte do Super Combo e quais são vendidos separadamente.
+Não repetir cursos para preencher espaço. Não publicar "Novo Curso" como produto real.
+
+O QUE A ALUNA RECEBE
+Quantidade de cursos, aulas e modelos; lista de materiais; nível dos conteúdos; atualizações, se incluídas.
+Não inventar números. Quantidades não fornecidas devem ficar centralizadas como pendências de conteúdo.
+Não prometer suporte, atualizações ou acesso vitalício sem confirmação.
+
+PROVA VISUAL
+Galeria com brincos, colares, acabamentos e peças em uso, conforme imagens disponíveis.
+Bastidores para mostrar o processo artesanal.
+Fotos demonstram o tipo de peça; não são prova de faturamento.
+
+PROFESSORA
+Usar o nome Mariah Xeque e o retrato real disponível.
+Apresentar sua relação com o crochê e a proposta de ensino.
+Não inventar anos de experiência, número de alunas, certificações, faturamento ou história pessoal.
+A página existente contém afirmações biográficas e de alcance que precisam ser confirmadas antes de reutilizar.
+
+PÚBLICO
+Pessoas que querem começar no crochê, aprimorar técnicas e acabamento ou produzir peças para vender, conforme nível efetivo dos cursos.
+Explicar pré-requisitos reais.
+
+AULAS E SUPORTE
+Explicar plataforma, formato, liberação do conteúdo, dispositivos compatíveis, prazo de acesso e atendimento, quando confirmados.
+Não presumir acesso imediato, downloads, comunidade ou suporte individual.
+
+DEPOIMENTOS
+Utilizar somente depoimentos reais fornecidos e autorizados.
+Se IMG contiver prints, transcrever fielmente e evitar expor dados pessoais desnecessários.
+Não fabricar avaliações, estrelas, fotos de alunas ou resultados.
+Sem depoimentos disponíveis, deixar a estrutura preparada e a seção desativada até receber material.
+
+OFERTA
+Apresentar o que está incluído, preço, parcelamento e CTA de compra.
+A página consultada exibia: "De R$ 750", "12x de R$ 67,21" e "R$ 649,90 à vista".
+Esses valores são apenas um registro da referência, não confirmação comercial atual.
+O parcelamento citado soma R$ 806,52 e supera o preço de referência de R$ 750. Confirmar juros e condições no checkout antes de apresentar desconto ou comparar valores.
+Não publicar preços provisórios como "R$ XX,XX".
+
+GARANTIA E REEMBOLSO
+Informar o prazo e o procedimento reais da oferta e da plataforma.
+Não inventar condições nem redigir garantias como se estivessem aprovadas.
+
+PROMOÇÃO
+Mostrar prazo ou limite de vagas somente se houver condição real confirmada.
+Não usar contador que reinicia, escassez inventada ou mensagens de compras fictícias.
+
+ENCOMENDAS PERSONALIZADAS
+Incluir uma área própria para quem deseja encomendar peças prontas.
+Diferenciar claramente "comprar o curso" de "encomendar uma peça".
+Apresentar fotos disponíveis e um CTA específico para consultar encomendas.
+Não inventar preços, estoque ou prazo de produção.
+Usar contato confirmado e mensagem de interesse em encomendas, caso o canal seja WhatsApp.
+O curso deve permanecer como objetivo principal da página.
+
+PERGUNTAS FREQUENTES
+Preparar respostas para:
+- Preciso saber crochê?
+- Quais materiais preciso?
+- O que está incluído no combo?
+- Como acesso as aulas?
+- Posso assistir pelo celular?
+- Por quanto tempo tenho acesso?
+- Como funciona o suporte?
+- Como funciona o pagamento?
+- Como funciona o reembolso?
+- Como faço uma encomenda personalizada?
+Responder apenas com dados confirmados. Manter perguntas sem resposta como pendências fora da interface pública.
+
+RODAPÉ
+Identificação da marca, contato e links de termos e privacidade.
+Crédito discreto "Desenvolvido por NextWave", conforme referência.
+Não usar a identidade azul/roxa da NextWave como identidade da Mariah.
+Documentos legais devem refletir a operação real. Se não estiverem disponíveis, registrar a pendência e não apresentar texto inventado como versão aprovada.
+
+7. IMPLEMENTAÇÃO E EXPERIÊNCIA
+
+- Criar navegação curta por âncoras, com destinos válidos.
+- Repetir o CTA principal em pontos estratégicos sem poluir a página.
+- Separar visual e semanticamente compra do combo e encomendas.
+- Não deixar botões com href="#" ou destinos fictícios.
+- Sem checkout ou contato confirmado, deixar a ação indisponível de forma clara na versão de revisão e registrar a pendência.
+- Não criar formulários que aparentem enviar dados sem integração funcional.
+- FAQ acessível por teclado, com estados de abertura claros.
+- Carrosséis, se usados, devem funcionar por toque e teclado, com controles visíveis. Não esconder todo o conteúdo essencial em um carrossel.
+- Respeitar preferência por movimento reduzido.
+- Usar HTML semântico, um H1, títulos hierárquicos, foco visível e textos alternativos adequados.
+- Otimizar imagens, fornecer dimensões e evitar mudanças de layout durante o carregamento.
+- Carregar imagens abaixo da dobra de forma adiada; priorizar a imagem principal.
+- Garantir boa leitura, contraste e botões confortáveis em telas pequenas.
+- Não inserir rastreadores, pixels ou scripts de terceiros sem configuração fornecida.
+
+8. DADOS PENDENTES
+
+Centralizar em arquivo de configuração ou estrutura equivalente:
+- Nome comercial definitivo do combo.
+- Cursos e técnicas efetivamente incluídos.
+- Quantidade de aulas e modelos.
+- Lista de materiais.
+- Plataforma, prazo e condições de acesso.
+- Canal, duração e regras do suporte.
+- Atualizações incluídas ou não.
+- Biografia aprovada da professora.
+- Depoimentos autorizados.
+- Preço, parcelamento, juros e link oficial do checkout.
+- Garantia e procedimento de reembolso.
+- Prazo real da promoção, se existir.
+- Contato de atendimento e de encomendas.
+- Termos de uso e política de privacidade.
+
+A ausência desses dados não impede implementar o layout. Prepare os componentes, mantenha conteúdo não confirmado fora da versão pública e apresente uma lista objetiva de pendências na entrega. Não substitua dados faltantes por promessas.
+
+9. CRITÉRIOS DE ENTREGA
+
+- Implementar a página completa, não apenas sugerir um layout.
+- Utilizar as imagens reais de IMG.
+- Aplicar a identidade Georgia + Arial, preto quente, creme e dourado.
+- Incluir todos os conteúdos solicitados que possuam informações confirmadas; preparar e documentar os demais.
+- Conferir em celular, tablet e desktop.
+- Verificar ausência de rolagem horizontal, imagens quebradas e sobreposição de texto.
+- Verificar navegação, botões, FAQ e controles de galeria.
+- Executar a verificação de build e os checks pertinentes à stack escolhida.
+- Entregar instruções para executar o projeto e indicar onde editar conteúdo, imagens e links.
+- Informar claramente pendências antes de publicação.
+- Não publicar ou alterar a página original sem solicitação específica.
+
+Comece pelo inventário das imagens, escolha uma composição coerente com a marca e prossiga com a implementação.
