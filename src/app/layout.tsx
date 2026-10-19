@@ -28,5 +28,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="pt-BR" data-scroll-behavior="smooth"><body><a className="skip-link" href="#conteudo">Pular para o conteúdo</a>{children}<PageEffects /></body></html>;
+  return <html lang="pt-BR" data-scroll-behavior="smooth"><body><a className="skip-link" href="#conteudo">Pular para o conteúdo</a>{children}<PageEffects /><noscript><style>{`.courses-arrow, .combo-arrow, .carousel-mobile-controls, .courses-footer, .combo-bottom, .atelier-orders__controls, .atelier-orders__catalog-footer { display: none !important; } .courses-track, .combo-track, .atelier-orders__viewport { scrollbar-width: auto; }`}</style></noscript></body></html>;
 }

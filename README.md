@@ -1,47 +1,49 @@
-﻿# Mariah Xeque — entrega final
+# Mariah Xeque — cursos de crochê
 
-Site em Next.js, React, TypeScript e Tailwind CSS. Etapas 1, 1.5, 2, 3 e 4 concluídas localmente, com 11 cursos individuais, Super Combo e interações acessíveis. Sem deploy ou alteração da página original.
+Projeto local em Next.js, React e TypeScript. O layout foi integralmente substituído pelo design de `mariah-independente.html`. A referência foi lida inteira e removida após a conversão, conforme solicitado. Sem publicação ou alteração do site original.
+
+Atualização da cliente de 19/10: abertura e descrições revisadas, menu visual inicial, Super Combo em grade e encomendas separadas dos cursos. O catálogo geral mantém o carrossel e os 11 cursos anteriores, com a inclusão de Entre Fios e Cristais (primeiro, com o link enviado) e Blusa Atena (link ainda pendente). Conjunto Solare está cadastrado como peça física. Fotografias e capas são locais. Sem header tradicional ou FAQ acrescentado.
 
 ## Executar
-
-Requer Node.js 20.9+ e npm. Com as dependências instaladas:
 
 ```powershell
 npm run dev
 ```
 
-Abra http://localhost:3000. Se a porta estiver indisponível, use `npm run dev -- --port 3100` e http://localhost:3100.
+Abra http://localhost:3000. Para outra porta: `npm run dev -- --port 3100`.
 
-Em outra máquina, execute `npm ci` antes. Neste ambiente, há cache para `npm ci --offline --cache .work/npm-cache`.
+Para produção local:
 
-Para produção local: `npm run build` e `npm run start` (ou `npm run start -- --hostname 127.0.0.1 --port 3100`).
+```powershell
+npm run build
+npm run start -- --hostname 127.0.0.1 --port 3100
+```
 
-## Editar
+Em outra máquina, execute `npm ci` primeiro. Este workspace também tem cache em `.work/npm-cache`.
 
-| Conteúdo | Arquivo / configuração |
+## Manutenção
+
+| Conteúdo | Local |
 | --- | --- |
-| Textos, navegação, biografia, FAQ e galeria | `src/config/site.ts` |
-| 11 cursos: nomes, descrições, categorias, capas e links | `src/config/courses.ts` |
-| Cursos efetivamente incluídos no Super Combo | `site.combo.confirmedCourses`, independente do catálogo |
-| Imagens | Originais em `IMG/`; seleção em `scripts/prepare-images.mjs`; executar `npm run assets` |
-| Imagem de compartilhamento | `scripts/prepare-social-image.mjs`; gerada junto com os assets |
-| Preço atual, parcelas, juros, garantia e condições | `site.offer`; histórico antigo fica em `site.historicalOffer` e não é exibido |
-| Compra do Super Combo | `site.offer.checkoutUrl`; até confirmar, o CTA leva ao catálogo |
-| Contato e Instagram | `site.contact`; aparecem somente quando preenchidos |
-| Encomendas | Frente removida do escopo; não há canal ou seção de venda de peças físicas |
-| Termos, privacidade e crédito | `site.legal` |
-| SEO e domínio final | `site.seo`: título, `siteUrl`, imagem social e `indexable` |
-| Layout e efeitos | `src/app/page.tsx`, `src/app/globals.css`, `src/components/` |
+| 13 cursos, descrições, capas e URLs | `src/config/courses.ts` |
+| Menu visual inicial | `src/components/universe-menu.tsx` |
+| Biografia, galeria, acesso e condições | `src/config/site.ts` |
+| Composição e checkout do Super Combo | `site.combo.confirmedCourses`, `site.offer.checkoutUrl` |
+| Grade do Super Combo e benefícios | `src/components/combo.tsx` |
+| Layout convertido | `src/app/page.tsx`, `src/app/globals.css` |
+| Carrosséis e galeria | `src/components/carousel.tsx`, `src/components/gallery.tsx` |
+| Encomendas personalizadas | `src/components/atelier.tsx` |
+| Conjunto Solare, foto e preço | `site.physicalProducts` |
+| Redes sociais e atendimento | `site.links.youtube`, `site.contact` |
+| Âncoras e compensação do cabeçalho | `src/components/page-effects.tsx`, `src/lib/internal-navigation.ts` |
+| Fotografias originais | `IMG/` |
+| Otimização e manifesto | `scripts/prepare-images.mjs`, `public/images/manifest.json` |
 
-`null` significa informação ausente. Não preencher com exemplos. Perguntas sem resposta ficam ocultas; depoimentos exigem autorização. Os links individuais abrem a apresentação oficial na Hotmart; o Club serve apenas ao acesso das alunas.
+`null` representa informação não confirmada. Os preços históricos não são uma oferta atual. O Club serve exclusivamente ao acesso das alunas. Sem checkout específico confirmado, o Super Combo informa a indisponibilidade da compra e não redireciona para outro produto. A grade demonstra técnicas, sem declarar inclusão dos cursos na oferta. Solare mantém preço próprio e não usa links dos cursos.
 
-## Antes de publicar
+O domínio público continua não preenchido e a página permanece `noindex, nofollow`. As pendências comerciais e de conteúdo constam em [PENDENCIAS.md](PENDENCIAS.md).
 
-Faltam composição e checkout específico do combo, condições comerciais atuais, prazo de acesso/suporte, contato e documentos legais. Lista completa em `PENDENCIAS.md`. Não usar os preços históricos como oferta atual.
-
-O domínio final ainda não foi confirmado. `site.seo.siteUrl` permanece nulo, sem canonical ou `og:url`. A base dos metadados sociais usa `http://localhost:3000` apenas para revisão local: preencha a URL final confirmada e gere novo build antes de compartilhar/publicar. `site.seo.indexable` continua `false` (`noindex, nofollow`); altere somente na publicação autorizada.
-
-## Verificar
+## Validação
 
 ```powershell
 npm run assets
@@ -50,17 +52,13 @@ npm run lint
 npm run build
 ```
 
-Com a aplicação em execução, rode `npm run qa`. Para a porta 3100 no PowerShell:
+Com o servidor em execução:
 
 ```powershell
 $env:QA_URL='http://127.0.0.1:3100'
 npm run qa
 ```
 
-QA usa Chrome/Edge instalado, testa seis larguras e grava relatório/capturas em `.work/qa-stage4/`. Para capturar cada seção em 360, 390, 768 e 1440 px, acrescente `$env:QA_VISUAL_REVIEW='1'` antes do comando. `QA_BROWSER_PATH` e `QA_EVIDENCE_DIR` permitem outro executável ou diretório.
+A auditoria usa Chrome/Edge local. Capturas e relatório em `.work/qa-reference/`. Verifica 360, 390, 768, 1024, 1440 e 1920 px, destinos, imagens, carrosséis, teclado, mouse, toque, galeria, encomendas, âncoras, histórico, movimento reduzido e conteúdo sem JavaScript. `QA_EVIDENCE_DIR` e `QA_BROWSER_PATH` permitem escolher pasta e navegador.
 
-Resultados em `docs/VALIDACAO.md`; cobertura do TXT em `docs/ENTREGA.md`; fontes e imagens em `docs/FONTES.md` e `docs/IMAGENS.md`; comportamento dos efeitos em `docs/INTERACOES.md`; estado final em `PROGRESSO.md`.
-
-A etapa 4 unificou foco/hash/scroll em `src/components/page-effects.tsx`, com seleção de links em `src/lib/internal-navigation.ts`. Inventário, diagnóstico e limites em `docs/NAVEGACAO.md`. `next.config.ts` permite também a origem local 127.0.0.1 no desenvolvimento, evitando bloqueio de HMR ao usar esse endereço.
-
-Para executar somente a auditoria de navegação, configure `$env:QA_NAVIGATION_ONLY='1'` antes de `npm run qa`; para voltar à suíte completa, use `$env:QA_NAVIGATION_ONLY=$null`. Ela registra as trajetórias reais em desktop/mobile, cliques modificados e externos, histórico, movimento reduzido, wheel e toque em `navigation-report.json`. As evidências do desenvolvimento ficam em `.work/qa-stage4-dev/`; a pasta de saída pode ser escolhida com `QA_EVIDENCE_DIR`.
+Entrega atual: [docs/ALTERACOES-CLIENTE-1910.md](docs/ALTERACOES-CLIENTE-1910.md). Evidências desta alteração em `.work/qa-cliente-1910/`. Os documentos das etapas anteriores registram o histórico e não descrevem o layout atual.

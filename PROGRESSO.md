@@ -1,5 +1,15 @@
 ﻿# Progresso — Mariah Xeque
 
+## Alterações da cliente — 19/10/2026
+
+Referências examinadas visualmente antes das edições: os dois PNG de `referencias`, com menu e Super Combo. Abertura, introdução dos cursos e frases explicitamente atribuídas implementadas. Menu visual, grade do Combo e seção física Solare criados mantendo Georgia/Arial e a paleta aprovada. Carrossel geral preservado. Entre Fios e Cristais identificado pelo redirecionamento GET do link prioritário e cadastrado em primeiro. Blusa Atena incluída com capa oficial local, sem inventar URL. Total: 13 cursos, 12 links individuais reais. Sem atribuir cursos ou condições ilustrativas automaticamente ao Combo. Solare tem nome/preço fornecidos; foto e contato ausentes. Links sociais também pendentes. Oferta do Combo sem checkout permanece sem CTA ativo. Entrega em `docs/ALTERACOES-CLIENTE-1910.md`; publicação não realizada. Os registros abaixo são históricos e foram superados quando conflitantes.
+
+## Substituição visual em 19/10/2026
+
+Correção solicitada pelo usuário: restaurada “Encomendas personalizadas” na posição da referência, com carrossel e fotografias reais; removidos “Vamos esclarecer”, cabeçalho e controles mobile extras. Títulos e textos principais restaurados. Os registros anteriores de exclusão da seção de encomendas foram superados por essa instrução.
+
+Layout integralmente convertido de `mariah-independente.html` para React. Referência removida a pedido do usuário. Catálogo com 11 cursos e URLs preservados; fotos locais; carrosséis, galeria, oferta e biografia no novo visual. Sem encomendas, produtos provisórios, preços históricos ou checkout fictício. Estilos e componentes antigos substituídos. Entrega atual e validação em `docs/SUBSTITUICAO-VISUAL.md`; os registros abaixo são históricos.
+
 ## Etapa 4 concluída em 17/10/2026 — navegação e fluidez
 
 Implementação concluída diretamente no projeto. Identidade visual, cursos, textos, links Hotmart e condições comerciais preservados; sem encomendas, novas seções, dependências ou deploy.

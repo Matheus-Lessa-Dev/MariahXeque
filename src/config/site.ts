@@ -23,6 +23,7 @@ export const site = {
   links: {
     studentAccess: "https://hotmart.com/pt-br/club/mariah-xeque",
     creatorProfile: "https://hotmart.com/pt-br/marketplace/especialista/maria-antonia-de-oliveira-xeque/AME5EIOLVA",
+    youtube: "https://www.youtube.com/@mariahxeque" as string | null,
   },
   // Registro da referência antiga, nunca utilizado como oferta vigente na interface.
   historicalOffer: {
@@ -42,11 +43,11 @@ export const site = {
     { label: "Dúvidas", href: "#duvidas" },
   ],
   hero: {
-    eyebrow: "Cursos de crochê com Mariah Xeque",
-    title: "Transforme fios",
-    highlight: "em peças que encantam.",
-    description: "Para começar do zero ou aprimorar sua técnica: aprenda a criar brincos, colares e acessórios no seu ritmo. Conheça o Super Combo e os cursos individuais.",
-    cta: "Conhecer o Super Combo",
+    eyebrow: "MARIAH XEQUE ATELIÊ",
+    title: "Transforme fios em",
+    highlight: "peças que encantam.",
+    description: "Aprenda a criar joias e acessórios em crochê, desenvolva sua criatividade e descubra novas possibilidades para o seu trabalho artesanal.",
+    cta: "Conheça os cursos",
     secondaryCta: "Explorar os cursos",
     caption: "O cuidado está em cada ponto.",
     note: "Crochê, criatividade e o prazer de fazer à mão.",
@@ -58,8 +59,10 @@ export const site = {
   },
   combo: {
     eyebrow: "Seu próximo capítulo no crochê",
-    title: "Um combo.\nMuitas formas de criar.",
-    description: "Um método para criar peças desejadas e explorar o crochê como possibilidade de renda. No Super Combo, você desenvolve técnica, criatividade e acabamento para dar forma ao seu trabalho, com prática e no seu ritmo.",
+    title: "Muito além do crochê.\nUm universo de possibilidades.",
+    description: "Explore diferentes técnicas, aprenda a criar joias e acessórios artesanais e amplie suas possibilidades criativas com uma coleção completa de cursos em um só lugar.",
+    // Exemplos de técnicas, não confirmação de inclusão na oferta.
+    previewCourseIds: ["glow", "flowers", "ariel", "eloa-camelia", "elo-folha-esther", "fios-em-festa", "colares", "iris"],
     topics: [
       { number: "01", title: "Aprendizado passo a passo", description: "Aulas com técnicas do básico ao avançado para acompanhar cada etapa da criação." },
       { number: "02", title: "Modelos para explorar", description: "Modelos exclusivos selecionados e atualizações futuras para ampliar suas possibilidades no crochê." },
@@ -159,9 +162,12 @@ export const site = {
   contact: {
     url: null as string | null,
     email: null as string | null,
-    instagram: null as string | null,
+    instagram: "https://www.instagram.com/mariahxeque/" as string | null,
     unavailableMessage: "O contato de atendimento está indisponível nesta página no momento.",
   },
+  physicalProducts: [
+    { id: "solare", name: "Conjunto Solare", price: "R$ 139,90 + frete", image: null as string | null, alt: "Conjunto Solare" },
+  ],
   legal: {
     termsUrl: null as string | null,
     privacyUrl: null as string | null,

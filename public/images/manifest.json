@@ -1,5 +1,37 @@
 [
   {
+    "original": "05b402b6-055c-4f60-8a5d-731c5f439b69.jpg",
+    "output": "public/images/curso-entre-fios-e-cristais.webp",
+    "description": "Capa oficial Entre Fios e Cristais, identificada visualmente",
+    "width": 1280,
+    "height": 720,
+    "bytes": 82944
+  },
+  {
+    "original": "3F9F21D7-5AB6-4D90-B31B-2E4DBA12D4E2.png",
+    "output": "public/images/curso-blusa-atena.webp",
+    "description": "Capa oficial quadrada Blusa Atena, identificada visualmente",
+    "width": 1024,
+    "height": 1024,
+    "bytes": 136988
+  },
+  {
+    "original": "270fdf1c-c7aa-48ee-aeb9-dd1ac88d6a0a.jpg",
+    "output": "public/images/curso-fios-em-festa-oficial.webp",
+    "description": "Capa oficial Fios em Festa fornecida no projeto",
+    "width": 1280,
+    "height": 720,
+    "bytes": 171692
+  },
+  {
+    "original": "4F39092C-2A30-4B3B-A355-3181AD3B7F03.png",
+    "output": "public/images/mariah-abertura.webp",
+    "description": "Retrato exato da abertura da referência, com blusa preta",
+    "width": 1086,
+    "height": 1448,
+    "bytes": 161962
+  },
+  {
     "original": "CB31E977-5BAC-443F-8A08-4396C45AD14E.png",
     "output": "public/images/mariah-brincos.webp",
     "description": "Retrato com blusa verde e brincos dourados",
@@ -142,5 +174,69 @@
     "width": 1440,
     "height": 810,
     "bytes": 221778
+  },
+  {
+    "original": "6AB40B02-F7BE-41D4-A615-C137FFB371A4.png",
+    "output": "public/images/curso-glow-quadrado.webp",
+    "description": "Capa oficial quadrada Brinco Glow",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 196606
+  },
+  {
+    "original": "1A4B1F41-5D28-4EC6-960D-6D1CB0F680A8.png",
+    "output": "public/images/curso-colares-quadrado.webp",
+    "description": "Capa oficial quadrada Colares em Fios",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 194302
+  },
+  {
+    "original": "105DF775-8201-47E1-B2F1-6E3C36A836AF.png",
+    "output": "public/images/curso-iris-quadrado.webp",
+    "description": "Capa oficial quadrada Brinco Íris",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 235992
+  },
+  {
+    "original": "C1980850-AF19-491C-B41E-5FA94C99248B.png",
+    "output": "public/images/curso-liz-quadrado.webp",
+    "description": "Capa oficial quadrada Brinco Liz",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 212294
+  },
+  {
+    "original": "2AF7F4F7-218A-4D0E-B4A4-3C957B140845.png",
+    "output": "public/images/curso-eloa-camelia-quadrado.webp",
+    "description": "Capa oficial quadrada Eloá e Camélia",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 284274
+  },
+  {
+    "original": "5DDB0749-F5A0-4756-A5A6-A19AFA07B915.png",
+    "output": "public/images/curso-elo-folha-esther-quadrado.webp",
+    "description": "Capa oficial quadrada Elo, Folha e Esther",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 286824
+  },
+  {
+    "original": "84ED9D5F-9C3E-489A-833B-EA92D5D225BA.png",
+    "output": "public/images/curso-karol-quadrado.webp",
+    "description": "Capa oficial quadrada Brinco Karol",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 276408
+  },
+  {
+    "original": "56E55BEB-533E-4259-9A22-71B3E538447C.png",
+    "output": "public/images/curso-ariel-quadrado.webp",
+    "description": "Capa oficial quadrada Colar Ariel",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 257438
   }
 ]

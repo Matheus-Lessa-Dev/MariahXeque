@@ -3,6 +3,10 @@ import { mkdir, writeFile } from "node:fs/promises";
 
 // Somente conversão/otimização; fotografias originais preservadas em IMG.
 const selections = [
+  ["05b402b6-055c-4f60-8a5d-731c5f439b69.jpg", "curso-entre-fios-e-cristais", "Capa oficial Entre Fios e Cristais, identificada visualmente"],
+  ["3F9F21D7-5AB6-4D90-B31B-2E4DBA12D4E2.png", "curso-blusa-atena", "Capa oficial quadrada Blusa Atena, identificada visualmente"],
+  ["270fdf1c-c7aa-48ee-aeb9-dd1ac88d6a0a.jpg", "curso-fios-em-festa-oficial", "Capa oficial Fios em Festa fornecida no projeto"],
+  ["4F39092C-2A30-4B3B-A355-3181AD3B7F03.png", "mariah-abertura", "Retrato exato da abertura da referência, com blusa preta"],
   ["CB31E977-5BAC-443F-8A08-4396C45AD14E.png", "mariah-brincos", "Retrato com blusa verde e brincos dourados"],
   ["F7CAFAAF-0AD4-41C5-83A9-AC2BC6431D80.png", "mariah-colares", "Retrato sorrindo e segurando colares coloridos"],
   ["Brinco Íris.png", "brinco-iris", "Brincos vermelhos e mostarda em cartela"],
@@ -21,6 +25,14 @@ const selections = [
   ["790acb95-692c-433a-9ec8-d3cbdfa3e2af.jpg", "curso-karol", "Capa oficial Brinco Karol"],
   ["592c4423-f435-46f4-aeea-9286562bc164.jpg", "curso-ariel", "Capa oficial Colar Ariel"],
   ["DB66020D-A60C-4A23-8E2E-C4B8D062C2DB.png", "curso-fios-em-festa", "Capa oficial Fios em Festa"],
+  ["6AB40B02-F7BE-41D4-A615-C137FFB371A4.png", "curso-glow-quadrado", "Capa oficial quadrada Brinco Glow"],
+  ["1A4B1F41-5D28-4EC6-960D-6D1CB0F680A8.png", "curso-colares-quadrado", "Capa oficial quadrada Colares em Fios"],
+  ["105DF775-8201-47E1-B2F1-6E3C36A836AF.png", "curso-iris-quadrado", "Capa oficial quadrada Brinco Íris"],
+  ["C1980850-AF19-491C-B41E-5FA94C99248B.png", "curso-liz-quadrado", "Capa oficial quadrada Brinco Liz"],
+  ["2AF7F4F7-218A-4D0E-B4A4-3C957B140845.png", "curso-eloa-camelia-quadrado", "Capa oficial quadrada Eloá e Camélia"],
+  ["5DDB0749-F5A0-4756-A5A6-A19AFA07B915.png", "curso-elo-folha-esther-quadrado", "Capa oficial quadrada Elo, Folha e Esther"],
+  ["84ED9D5F-9C3E-489A-833B-EA92D5D225BA.png", "curso-karol-quadrado", "Capa oficial quadrada Brinco Karol"],
+  ["56E55BEB-533E-4259-9A22-71B3E538447C.png", "curso-ariel-quadrado", "Capa oficial quadrada Colar Ariel"],
 ];
 
 await mkdir("public/images", { recursive: true });
