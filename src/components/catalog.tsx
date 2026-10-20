@@ -1,6 +1,9 @@
 import Image from "next/image";
+import imageManifest from "../../public/images/manifest.json";
 import { site } from "@/config/site";
 import { Carousel } from "./carousel";
+
+const imageSizes = new Map(imageManifest.map(image => [image.output.replace(/^public/, ""), image]));
 
 export function Catalog() {
   return <section className="courses-section" id="cursos" tabIndex={-1} aria-labelledby="catalog-title">
@@ -11,9 +14,10 @@ export function Catalog() {
       </div>
       <Carousel variant="courses" id="coursesTrack" label="Cursos individuais" count={site.catalog.length}>
         {site.catalog.map((course, index) => {
+          const imageSize = course.image ? imageSizes.get(course.image) : undefined;
           const content = <>
             <div className="course-card__image">
-              {course.image ? <Image src={course.image} alt={`Capa oficial: ${course.title}`} fill sizes="(max-width: 700px) 78vw, (max-width: 1000px) 45vw, 400px" draggable={false} /> : <div className="course-card__typography"><span>CURSO DE CROCHÊ</span><strong>Bolsa<br /><em>Mikaela</em></strong><span>MARIAH XEQUE</span></div>}
+              {course.image && imageSize ? <Image src={course.image} alt={`Capa oficial: ${course.title}`} width={imageSize.width} height={imageSize.height} sizes="(max-width: 700px) 78vw, (max-width: 1000px) 45vw, 400px" draggable={false} /> : <div className="course-card__typography"><span>CURSO DE CROCHÊ</span><strong>Bolsa<br /><em>Mikaela</em></strong><span>MARIAH XEQUE</span></div>}
               {course.url && <div className="course-card__overlay"><span>VER CURSO NA HOTMART</span><strong aria-hidden="true">→</strong></div>}
             </div>
             <div className="course-card__content"><span className="course-card__number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><div><h3>{course.title}</h3><p>{course.description}</p></div></div>

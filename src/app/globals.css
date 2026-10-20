@@ -375,6 +375,7 @@ img { max-width: 100%; }
 }
 .courses-track {
     display: flex;
+    align-items: flex-start;
     gap: 28px;
     overflow-x: auto;
     overflow-y: hidden;
@@ -411,30 +412,13 @@ img { max-width: 100%; }
 .course-card__image {
     position: relative;
     width: 100%;
-    height: 380px;
     overflow: hidden;
-    background: #d8cbbb;
-    border-radius: 3px;
     line-height: 0;
 }
 .course-card__image img {
-    position: absolute;
-    inset: 0;
     display: block;
-    width: 100% !important;
-    height: 100% !important;
-    min-width: 100%;
-    min-height: 100%;
-    max-width: none !important;
-    max-height: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    object-fit: cover;
-    object-position: center;
-    transition: transform .6s ease;
-}
-.course-card:hover .course-card__image img {
-    transform: scale(1.035);
+    width: 100%;
+    height: auto;
 }
 .course-card__overlay {
     position: absolute;
@@ -469,10 +453,6 @@ img { max-width: 100%; }
     color: white;
     font-size: 18px;
     font-weight: 400;
-}
-.course-card:hover
-.course-card__image img {
-    transform: scale(1.045);
 }
 .course-card:hover
 .course-card__overlay {
@@ -510,9 +490,7 @@ img { max-width: 100%; }
 }
 .courses-arrow {
     position: absolute;
-    top: calc(
-        50% - 32px
-    );
+    bottom: -66px;
     z-index: 10;
     width: 52px;
     height: 52px;
@@ -542,10 +520,10 @@ img { max-width: 100%; }
     transform: scale(1.05);
 }
 .courses-arrow--prev {
-    left: -26px;
+    right: 66px;
 }
 .courses-arrow--next {
-    right: -26px;
+    right: 0;
 }
 .courses-arrow.is-disabled {
     opacity: .25;
@@ -2262,8 +2240,7 @@ body { color: #eee7dd; }
 .skip-link { position: fixed; top: 0; left: 0; z-index: 100; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; background: #eee4d6; color: #171614; }
 .skip-link:focus { top: 12px; left: 16px; width: auto; height: auto; overflow: visible; clip-path: none; padding: 12px 20px; }
 .croche-hero__image img { transform: translate(var(--hero-x, 0), var(--hero-y, 0)); transition: transform .3s ease; }
-.course-card__image img { object-fit: contain; }
-.course-card__typography { width: 100%; height: 100%; background: #25231f; color: #eee5d9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px; border: 1px solid #79633e; line-height: 1.1; text-align: center; }
+.course-card__typography { width: 100%; aspect-ratio: 1; background: #25231f; color: #eee5d9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px; line-height: 1.1; text-align: center; }
 .course-card__typography > span { color: #c6a05a; font-size: 9px; letter-spacing: .2em; }
 .course-card__typography strong { font: 48px/1 Georgia, serif; }
 .course-card__typography em { color: #c6a05a; font-weight: 400; }
