@@ -1,27 +1,26 @@
 ﻿# Pendências reais antes da publicação
 
-Atualização visual de 19/10/2026: o layout de `mariah-independente.html` foi implementado e a referência removida conforme solicitado. As pendências abaixo continuam válidas. A galeria é referência de aprendizado, não uma lista de cursos incluídos no Super Combo. Entrega atual em `docs/SUBSTITUICAO-VISUAL.md`.
+Atualização de 03/11/2026: o Super Combo segue o estilo e os textos de `IMG/ReferenciaSuperCombo.jpeg`, conforme solicitado pelo usuário. Composição, modelos e preços dessa imagem estão na página; o botão usa o checkout Hotmart informado na conversa. As condições não fornecidas continuam pendentes abaixo.
 
-## Alterações da cliente — 19/10 (estado atual)
+## Conteúdo e atendimento
 
-- Fotografia correspondente ao Conjunto Solare: ausente nos arquivos disponíveis. O nome e o preço fornecidos estão na seção física, sem atribuir uma fotografia de outro produto.
-- Contato oficial para encomendas: ainda não informado. Encomendas permanecem sem CTA de contato ativo. YouTube e Instagram foram fornecidos pelo usuário e adicionados ao menu: `https://www.youtube.com/@mariahxeque` e `https://www.instagram.com/mariahxeque/`.
+- Encomendas: a seção é somente um convite para pedidos personalizados com a Mariah pelo WhatsApp. Solare e o catálogo de peças foram retirados por solicitação do usuário.
+- Contato de encomendas informado em 03/11: `+55 45 8415-6998`, preservado exatamente como enviado. Botões abrem o WhatsApp com mensagem de encomenda preenchida. YouTube e Instagram oficiais também estão no menu.
 - Link de inscrição da Blusa Atena: não localizado. O curso tem capa e descrição autorizadas e permanece visível sem botão de compra.
+- Link de inscrição da Coleção Imperatriz: ainda não informado. Curso incluído em segundo no catálogo em 03/11/2026, com a capa `16736D1A-3C1C-49AC-83EF-639B4B77276F.png` indicada pelo usuário.
 - A pasta `referencias` contém somente as capturas do menu e do Super Combo. Não contém novas capas finais, foto do Solare ou referência da abertura. Foram usadas as capas oficiais visualmente identificadas de `IMG`, incluindo Entre Fios e Cristais e Blusa Atena.
 - Das oito frases sem curso indicado, duas tiveram associação segura: dois modelos → Eloá/Camélia; três modelos → Folha/Esther/Elo. As outras seis continuam sem associação: cinco modelos metalizados; pedrarias que iluminam; mais vendido; cara do verão; elegantes e estilosos; conjunto mais queridinho. Os demais cursos mantêm suas descrições anteriores ou as frases explicitamente atribuídas no prompt.
-- A arte do Combo não confirma sua composição nem condições comerciais: “12 cursos inclusos”, apostilas, listas, acesso vitalício e suporte continuam sem comprovação. As categorias ilustrativas, Bolsa Sofia e contagens da arte não foram cadastradas como produtos. A grade demonstra técnicas de cursos reais, com aviso de que não confirma inclusão.
+- Super Combo: 12 títulos e descrições, 21 modelos de brincos, 5 modelos de colares e valores transcritos da referência solicitada em 03/11. Não foram adicionadas condições de acesso vitalício, suporte ou apostilas.
 
-O catálogo agora tem 13 cursos: os 11 anteriores, Entre Fios e Cristais e Blusa Atena. Os 11 destinos antigos foram preservados. Entre Fios e Cristais usa o link prioritário `https://go.hotmart.com/W107711262G`, cujo redirecionamento GET foi identificado em 19/10/2026 para `https://hotmart.com/pt-br/marketplace/produtos/curso-entre-fios-e-cristais/W107711262G`. Nenhum curso foi automaticamente incluído no Super Combo.
+O catálogo agora tem 13 cursos e 11 links individuais, após a exclusão de Bolsa Mikaela e inclusão de Coleção Imperatriz em segundo, solicitadas em 03/11/2026. Entre Fios e Cristais usa o link prioritário `https://go.hotmart.com/W107711262G`, cujo redirecionamento GET foi identificado em 19/10/2026 para `https://hotmart.com/pt-br/marketplace/produtos/curso-entre-fios-e-cristais/W107711262G`. Nenhum curso foi automaticamente incluído no Super Combo.
 
 ## Super Combo
 
 | Informação pendente | Configuração |
 | --- | --- |
-| Composição específica de cursos e técnicas | `combo.confirmedCourses` |
-| Quantidade de aulas e modelos | `combo.lessonCount`, `combo.modelCount` |
+| Quantidade de aulas | `combo.lessonCount` |
 | Lista exata de materiais e pré-requisitos | `combo.materials`, `combo.prerequisites` |
-| Destino oficial específico para compra | `offer.checkoutUrl` |
-| Preços atuais, parcelas, juros e meios de pagamento | `offer.price`, `offer.installments`, `offer.interest`, `offer.paymentMethods` |
+| Juros e meios de pagamento | `offer.interest`, `offer.paymentMethods` |
 | Prazo e condições exatas de acesso | `learning.access` |
 | Dispositivos compatíveis | `learning.devices` |
 | Canal, duração e regras do suporte | `learning.support` |
@@ -30,20 +29,18 @@ O catálogo agora tem 13 cursos: os 11 anteriores, Entre Fios e Cristais e Blusa
 
 Benefícios recuperados e autorizados: aulas passo a passo, modelos exclusivos selecionados, atualizações futuras, orientação de materiais e técnicas do básico ao avançado. A programação de atualizações não foi informada. Funcionamento recuperado: Hotmart, liberação após confirmação da compra, aprendizado no próprio ritmo e conteúdo para consulta. Isso não confirma acesso vitalício ou suporte.
 
-A compra do combo permanece sem destino e sem CTA ativo; a oferta não redireciona para um curso individual ou para o Club. Os preços antigos estão em `historicalOffer` apenas como registro e ficam fora da interface.
+A compra do combo usa o checkout `https://pay.hotmart.com/B99761164L?sck=HOTMART_MEM_CA&off=wdj5gmv7&bid=1793705416381`, fornecido pelo usuário. Valores exibidos: 12x de R$ 67,21 ou R$ 649,90 à vista, conforme a imagem solicitada.
 
 ## Demais dados
 
-- Contato oficial de atendimento: `contact.url` ou `contact.email`. Instagram já preenchido com o perfil fornecido.
 - Termos e política de privacidade aprovados: `legal.termsUrl`, `legal.privacyUrl`.
 - Depoimentos reais autorizados: `testimonials`.
 - URL de crédito NextWave, se desejada: `legal.creditUrl`.
-- Para Bolsa Mikaela, nenhuma imagem local foi identificada com segurança; alternativa tipográfica já implementada, sem bloquear a apresentação do curso.
 - Três HEIC preservados, mas sem decodificação disponível. As 40 imagens JPG/PNG foram examinadas visualmente.
 
 A biografia da professora, os textos do catálogo e os links fornecidos já foram incorporados. A divergência histórica de Colares em Fios está documentada em `docs/FONTES.md`; a frase exata enviada pela cliente em 19/10 não anuncia quantidade de modelos e substitui a descrição anterior.
 
-Encomendas de peças físicas foram reincluídas expressamente pela cliente em 19/10. A foto do Solare e o canal oficial de atendimento continuam pendentes. Sem checkout confirmado, não há barra inferior de compra no mobile. O projeto permanece local e não foi publicado.
+O atendimento direto com a Mariah pelo WhatsApp foi adicionado em 03/11. A seção de encomendas personalizadas tem um único botão e não exibe o telefone, produtos ou preços. O projeto permanece local e não foi publicado.
 
 
 ## Domínio e indexação

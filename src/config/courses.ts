@@ -17,6 +17,18 @@ export const courses: CatalogCourse[] = [
     url: "https://go.hotmart.com/W107711262G",
   },
   {
+    id: "imperatriz", title: "Curso Coleção Imperatriz", category: "Conjuntos",
+    description: "Aprenda a criar o bracelete e o brinco da Coleção Imperatriz.",
+    image: "/images/curso-imperatriz.webp",
+    url: null,
+  },
+  {
+    id: "colares", title: "Curso Colares em Fios + Aula Bônus", category: "Colares",
+    description: "Transforme fios em colares únicos, cheios de estilo e personalidade.",
+    image: "/images/curso-colares-quadrado.webp",
+    url: "https://hotmart.com/pt-br/marketplace/produtos/curso-choker-magnolia-colar-mirabel-aula-bonus/L96369888U",
+  },
+  {
     id: "glow", title: "Curso Brinco Glow", category: "Brincos",
     description: "Descubra a técnica que transforma crochê e pedrarias em joias únicas.",
     image: "/images/curso-glow-quadrado.webp",
@@ -27,12 +39,6 @@ export const courses: CatalogCourse[] = [
     description: "Aprenda a criar três modelos de brincos florais em crochê.",
     image: "/images/curso-flowers.webp",
     url: "https://hotmart.com/pt-br/marketplace/produtos/curso-flowers/W97757909K",
-  },
-  {
-    id: "colares", title: "Curso Colares em Fios + Aula Bônus", category: "Colares",
-    description: "Transforme fios em colares únicos, cheios de estilo e personalidade.",
-    image: "/images/curso-colares-quadrado.webp",
-    url: "https://hotmart.com/pt-br/marketplace/produtos/curso-choker-magnolia-colar-mirabel-aula-bonus/L96369888U",
   },
   {
     id: "iris", title: "Curso — Brinco Íris", category: "Brincos",
@@ -69,12 +75,6 @@ export const courses: CatalogCourse[] = [
     description: "Aprenda a criar um colar sofisticado com fios, pérolas e contas.",
     image: "/images/curso-ariel-quadrado.webp",
     url: "https://hotmart.com/pt-br/marketplace/produtos/curso-colar-em-perolas-ariel/R97990315H",
-  },
-  {
-    id: "mikaela", title: "Bolsa Mikaela — Parte 1 e 2", category: "Bolsas",
-    description: "Aprenda uma bolsa de crochê moderno com fecho da vovó e fundo estruturado, em duas partes.",
-    image: null,
-    url: "https://hotmart.com/pt-br/marketplace/produtos/bolsa-mikaela-parte-1-e-2-mariah-xeque/P89558066M",
   },
   {
     id: "fios-em-festa", title: "Curso Fios em Festa", category: "Conjuntos",

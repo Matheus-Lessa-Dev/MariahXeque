@@ -2,7 +2,6 @@ import Image from "next/image";
 import { site } from "@/config/site";
 import { Catalog } from "@/components/catalog";
 import { Combo } from "@/components/combo";
-import { Offer } from "@/components/offer";
 import { Footer } from "@/components/footer";
 import { Atelier } from "@/components/atelier";
 import { HeroVisual, Reveal } from "@/components/reference-effects";
@@ -66,7 +65,6 @@ export default function Home() {
         </div>
       </section>
       <Atelier />
-      <Offer />
     </main>
     <Footer />
   </>;

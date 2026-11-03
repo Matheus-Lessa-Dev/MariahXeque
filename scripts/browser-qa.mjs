@@ -34,16 +34,15 @@ const results = [];
 
 // Expectativas independentes da configuração que alimenta o site.
 const expectedCourses = [
+  ["Curso Colares em Fios + Aula Bônus", "curso-choker-magnolia-colar-mirabel-aula-bonus/L96369888U"],
   ["Curso Brinco Glow", "curso-brinco-glow/P97490542S"],
   ["Curso Flowers — Brinco Frida + 02 Modelos Bônus", "curso-flowers/W97757909K"],
-  ["Curso Colares em Fios + Aula Bônus", "curso-choker-magnolia-colar-mirabel-aula-bonus/L96369888U"],
   ["Curso — Brinco Íris", "curso-brinco-iris/G96014337A"],
   ["Curso Brinco Liz + Aula Bônus Brinco Glória", "introducao-explicacao-inicial/K96268866C"],
   ["Curso Brincos Eloá e Camélia", "curso-brincos-eloa-e-camelia/H98575184W"],
   ["Brinco Elo + Brinco Folha + Brinco Esther", "brinco-elo-brinco-folhar-brinco-esther/W96740520L"],
   ["Brinco Karol — Em crochê", "brinco-karol-em-croche/T96146002R"],
   ["Curso Colar em Pérolas — Ariel", "curso-colar-em-perolas-ariel/R97990315H"],
-  ["Bolsa Mikaela — Parte 1 e 2", "bolsa-mikaela-parte-1-e-2-mariah-xeque/P89558066M"],
   ["Curso Fios em Festa", "fios-em-festa/D99721009I"],
 ].map(([title, slug]) => ({ title, url: `https://hotmart.com/pt-br/marketplace/produtos/${slug}` }));
 let received = "";
@@ -141,15 +140,15 @@ try {
   await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
   await send('Page.navigate',{url});
   await until(()=>evaluate("document.readyState==='complete' && !!document.querySelector('.universe-menu')"),'Página atualizada não carregou');
+  await evaluate("(() => {const style=document.createElement('style');style.textContent='nextjs-portal { display: none !important; }';document.head.append(style)})()");
   await settle();
-  const expected=[{title:'Curso Entre Fios e Cristais',url:'https://go.hotmart.com/W107711262G'},...expectedCourses,{title:'Curso Blusa Atena',url:null}];
+  const expected=[{title:'Curso Entre Fios e Cristais',url:'https://go.hotmart.com/W107711262G'},{title:'Curso Coleção Imperatriz',url:null},...expectedCourses,{title:'Curso Blusa Atena',url:null}];
   assert.deepEqual(await evaluate("[...document.querySelectorAll('[data-course-id]')].map(e=>({title:e.querySelector('h3').textContent,url:e.querySelector('a')?.href||null}))"),expected);
-  assert.equal(await evaluate("new Set([...document.querySelectorAll('[data-course-id] a')].map(a=>a.href)).size"),12);
+  assert.equal(await evaluate("document.querySelector('[data-course-id=\"imperatriz\"] img').getAttribute('src').includes('curso-imperatriz.webp')"),true);
+  assert.equal(await evaluate("new Set([...document.querySelectorAll('[data-course-id] a')].map(a=>a.href)).size"),11);
   const phrases={glow:'Descubra a técnica que transforma crochê e pedrarias em joias únicas.',colares:'Transforme fios em colares únicos, cheios de estilo e personalidade.',flowers:'Aprenda a criar três modelos de brincos florais em crochê.',ariel:'Aprenda a criar um colar sofisticado com fios, pérolas e contas.','fios-em-festa':'Aprenda a criar brincos e braceletes em crochê com fios, texturas e cores marcantes.','blusa-atena':'Do zero ao acabamento, uma Blusa cheia de charme e estilo!'};
   for(const [id,phrase] of Object.entries(phrases)) {
     assert.equal(await evaluate(`document.querySelector('[data-course-id="${id}"] .course-card__content p').textContent`),phrase);
-    const comboDescription=await evaluate(`document.querySelector('[data-combo-course-id="${id}"] .combo-course__info p')?.textContent||null`);
-    if(comboDescription) assert.equal(comboDescription,phrase);
   }
   assert.equal(await evaluate("document.querySelector('.croche-hero__label').textContent"),'MARIAH XEQUE ATELIÊ');
   assert.equal(await evaluate("document.querySelector('.croche-hero__content > p').textContent"),'Aprenda a criar joias e acessórios em crochê, desenvolva sua criatividade e descubra novas possibilidades para o seu trabalho artesanal.');
@@ -157,19 +156,43 @@ try {
   assert.equal(await evaluate("document.querySelector('.reference-header, #duvidas, iframe')"),null);
   assert.equal(await evaluate("document.querySelectorAll('a[href=\"#\"],a[href=\"\"],a:not([href])').length"),0);
   assert.equal(await evaluate("[...document.querySelectorAll('a[href^=\"#\"]')].every(a=>document.getElementById(a.hash.slice(1)))"),true);
-  assert.equal(await evaluate("document.querySelectorAll('.universe-menu__item').length"),4);
+  assert.equal(await evaluate("document.querySelectorAll('.universe-menu__item').length"),5);
   assert.equal(await evaluate("document.querySelectorAll('.universe-menu__item--unavailable').length"),0);
-  assert.equal(await evaluate("document.querySelectorAll('.universe-menu a').length"),4);
+  assert.equal(await evaluate("document.querySelectorAll('.universe-menu a').length"),5);
+  assert.equal(await evaluate(`document.querySelector('.universe-menu a[href="#combo"]').textContent.includes('Super Combo de Crochê')`),true);
   assert.equal(await evaluate(`document.querySelector('.universe-menu a[href="https://www.youtube.com/@mariahxeque"]').textContent.includes('Meu canal no YouTube')`),true);
   assert.equal(await evaluate(`document.querySelector('.universe-menu a[href="https://www.instagram.com/mariahxeque/"]').textContent.includes('Acompanhe meu trabalho')`),true);
   assert.equal(await evaluate("document.querySelectorAll('.universe-menu__item--unavailable a').length"),0);
   assert.equal(await evaluate("document.querySelector('[data-course-id=\"blusa-atena\"] a')"),null);
-  assert.equal(await evaluate("document.querySelector('[data-physical-product=\"solare\"] h3').textContent"),'Conjunto Solare');
-  assert.equal(await evaluate("document.querySelector('.atelier-piece__price').textContent"),'R$ 139,90 + frete');
+  assert.equal(await evaluate("document.querySelector('[data-physical-product], .atelier-orders__catalog')"),null);
+  assert.equal(await evaluate("/Solare|139,90|R\\$/.test(document.querySelector('#encomendas').innerText)"),false);
   assert.equal(await evaluate("document.querySelector('#encomendas a[href*=\"hotmart\"]')"),null);
-  assert.equal(await evaluate("document.querySelector('[data-physical-product=\"solare\"] img')"),null);
-  assert.equal(await evaluate("document.querySelector('#mw-final-cta a')"),null);
-  assert.equal(await evaluate("/12 cursos inclusos|acesso vitalício|Bolsa Sofia|139,90/.test(document.querySelector('#combo').innerText)"),false);
+  assert.equal(await evaluate("document.querySelector('#atelier-title').textContent"),'Encomendas personalizadas com a Mariah.');
+  assert.equal(await evaluate("document.querySelector('#encomendas').innerText.includes('8415-6998')"),false);
+  assert.equal(await evaluate("document.querySelector('.atelier-orders__cta--primary').textContent.includes('Pedir encomenda personalizada')"),true);
+  assert.equal(await evaluate("[...document.querySelectorAll('#encomendas a')].every(a=>new URL(a.href).hostname==='wa.me'&&new URL(a.href).pathname==='/554584156998')"),true);
+  assert.equal(await evaluate("new URL(document.querySelector('.atelier-orders__cta--primary').href).searchParams.get('text')"),'Olá, Mariah! Gostaria de fazer uma encomenda personalizada. Podemos conversar sobre a minha ideia?');
+  assert.equal(await evaluate("document.querySelectorAll('#encomendas a').length"),1);
+  assert.equal(await evaluate("document.querySelector('.atelier-orders__contact-status')"),null);
+  const expectedCombo = [
+    ['Fios em Festa','Brincos com flores'],['Imperatriz','Bracelete e brinco'],
+    ['Ponto de Luz','Brincos com pedraria'],['Colares em Fios','Colares artesanais'],
+    ['Trio de Flores','3 modelos de brincos'],['Fio Metalizado','5 modelos de brincos'],
+    ['Brincos Clássicos','Modelos atemporais'],['Bolsas em Crochê','Modelos exclusivos'],
+    ['Braceletes em Fios','Modelos sofisticados'],['Técnicas Especiais','Acabamentos e detalhes'],
+    ['Acessórios Modernos','Peças versáteis'],['Combinações Criativas','Mix de técnicas'],
+  ];
+  assert.deepEqual(await evaluate("[...document.querySelectorAll('.combo-reference__course')].map(e=>[e.querySelector('h4').textContent,e.querySelector('p').textContent])"),expectedCombo);
+  assert.equal(await evaluate("document.querySelector('.combo-reference__count').textContent"),'12 CURSOS INCLUSOS');
+  assert.deepEqual(await evaluate("[...document.querySelectorAll('.combo-investment__summary li')].map(e=>e.textContent)"),['12 cursos inclusos','21 modelos de brincos','5 modelos de colares em crochê']);
+  assert.equal(await evaluate("document.querySelector('.combo-investment__installments').textContent"),'12x de R$ 67,21');
+  assert.equal(await evaluate("document.querySelector('.combo-investment__cash').textContent"),'ou R$ 649,90 à vista');
+  assert.equal(await evaluate("document.querySelector('.combo-investment__button > span').textContent"),'Quero meu Super Combo');
+  assert.equal(await evaluate("document.querySelector('a.combo-investment__button').getAttribute('href')"),'https://pay.hotmart.com/B99761164L?sck=HOTMART_MEM_CA&off=wdj5gmv7&bid=1793705416381');
+  assert.equal(await evaluate("document.querySelectorAll('#oferta').length"),1);
+  assert.equal(await evaluate("document.querySelector('#combo #oferta')!==null"),true);
+  assert.equal(await evaluate("(() => {const b=document.querySelector('.combo-investment__button');return b.tagName==='A'?/^https?:/.test(b.href):b.disabled})()"),true);
+  assert.equal(await evaluate("/acesso vitalício|Bolsa Sofia|139,90/.test(document.querySelector('#combo').innerText)"),false);
   assert.equal(await evaluate("/COLE[-_]AQUI|URL-DA-IMAGEM|LINK_CHECKOUT|Novo Curso|Minha sugestão para o início do site/i.test(document.body.innerText)"),false);
   assert.equal(await evaluate("document.querySelector('.mw-footer a[href*=\"/club/\"]').href"),'https://hotmart.com/pt-br/club/mariah-xeque');
 
@@ -180,14 +203,14 @@ try {
     await send('Emulation.setDeviceMetricsOverride',{width,height:width<768?844:1000,deviceScaleFactor:1,mobile:width<768});
     await evaluate("scrollTo({top:0,behavior:'instant'});document.querySelector('#coursesTrack').scrollTo({left:0,behavior:'instant'})");
     await pause(150);await settle();
-    const metrics=await evaluate(`({width:innerWidth,client:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth,courses:document.querySelectorAll('[data-course-id]').length,comboColumns:getComputedStyle(document.querySelector('.combo-course-grid')).gridTemplateColumns.split(' ').length,menuColumns:getComputedStyle(document.querySelector('.universe-menu__grid')).gridTemplateColumns.split(' ').length})`);
+    const metrics=await evaluate(`({width:innerWidth,client:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth,courses:document.querySelectorAll('[data-course-id]').length,comboColumns:getComputedStyle(document.querySelector('.combo-reference__courses')).gridTemplateColumns.split(' ').length,menuColumns:getComputedStyle(document.querySelector('.universe-menu__grid')).gridTemplateColumns.split(' ').length})`);
     assert.ok(metrics.scroll<=metrics.client+1,JSON.stringify(metrics));
     assert.equal(metrics.courses,13);
-    assert.equal(metrics.comboColumns,width<=520?1:width<=1000?2:4);
+    assert.equal(metrics.comboColumns,2);
+    assert.equal(await evaluate("[...document.querySelectorAll('.combo-reference__course, .combo-investment__panel, .combo-investment__button')].every(e=>e.scrollWidth<=e.clientWidth+1)"),true,'Conteúdo do Combo ultrapassa sua caixa');
     assert.equal(metrics.menuColumns,width<=767?1:2);
     await screenshot(`${width}-inicio`);
     for(const [name,selector] of [['menu','.universe-menu'],['cursos','#cursos'],['combo','#combo'],['encomendas','#encomendas']]) await reviewSection(`${width}-${name}`,selector);
-    await until(()=>evaluate("[...document.querySelectorAll('.combo-course-grid img')].every(i=>i.complete&&i.naturalWidth>0)"),'Capa do combo não carregou');
     await evaluate("document.querySelector('#coursesTrack').scrollTo({left:99999,behavior:'instant'})");await pause(180);
     await until(()=>evaluate("[...document.querySelectorAll('#coursesTrack img')].every(i=>i.complete&&i.naturalWidth>0)"),'Capa do catálogo não carregou');
     assert.equal(await evaluate("document.querySelector('.courses-arrow--next').disabled"),true);
@@ -211,19 +234,14 @@ try {
   assert.ok(await evaluate("document.querySelector('#coursesTrack').scrollLeft")>before+100);
   assert.equal(await evaluate('location.origin'),new URL(url).origin);
 
-  await click('.combo-course__image');await until(()=>evaluate("document.querySelector('dialog').open"),'Galeria não abriu');
-  await key('ArrowRight','ArrowRight',39);assert.equal(await evaluate("document.querySelector('#lightbox-title').textContent"),'Curso Flowers — Brinco Frida + 02 Modelos Bônus');
-  await screenshot('desktop-ampliacao');await key('Escape','Escape',27);await pause(120);
-  assert.equal(await evaluate("document.activeElement.className"),'combo-course__image');
-  assert.equal(await evaluate("document.body.style.overflow"),'');
 
   const navigation=[];
   for(const width of [390,1440]) {
     await send('Emulation.setDeviceMetricsOverride',{width,height:width<768?844:1000,deviceScaleFactor:1,mobile:width<768});
-    for(const id of ['cursos','encomendas']) {
+    for(const id of ['combo','cursos','encomendas']) {
       await click(`.universe-menu a[href="#${id}"]`);await settle();
-      const result=await evaluate(`({hash:location.hash,focus:document.activeElement.id,top:document.getElementById('${id}').getBoundingClientRect().top})`);
-      assert.equal(result.hash,`#${id}`);assert.equal(result.focus,id);assert.ok(result.top>=14&&result.top<=18,JSON.stringify(result));navigation.push({width,...result});
+      const result=await evaluate(`({hash:location.hash,focus:document.activeElement.id,top:document.getElementById('${id}').getBoundingClientRect().top,bottomGap:document.documentElement.scrollHeight-innerHeight-scrollY})`);
+      assert.equal(result.hash,`#${id}`);assert.equal(result.focus,id);assert.ok(result.top>=14&&(result.top<=18||result.bottomGap<2),JSON.stringify(result));navigation.push({width,...result});
     }
     await evaluate('history.back()');await settle();assert.equal(await evaluate('location.hash'),'#cursos');
     await evaluate('history.forward()');await settle();assert.equal(await evaluate('location.hash'),'#encomendas');
@@ -242,14 +260,15 @@ try {
   assert.ok(await evaluate("document.querySelector('#coursesTrack').scrollLeft>50"));
   await send('Page.navigate',{url:`${url}/?qa=direct#encomendas`});
   await until(()=>evaluate("location.search==='?qa=direct'&&document.readyState==='complete'"),'Hash direto');await settle();
-  assert.ok(await evaluate("document.querySelector('#encomendas').getBoundingClientRect().top>=14"));
+  await until(()=>evaluate("document.querySelector('#encomendas')?.getBoundingClientRect().top>=14"),'Rolagem inicial para encomendas não terminou');
   await send('Emulation.setScriptExecutionDisabled',{value:true});await send('Page.navigate',{url:`${url}/?qa=no-js`});
   await until(()=>evaluate("location.search==='?qa=no-js'&&document.readyState==='complete'"),'Sem JavaScript');
   assert.equal(await evaluate("document.querySelectorAll('[data-course-id]').length"),13);
   assert.equal(await evaluate("getComputedStyle(document.querySelector('.universe-menu')).visibility"),'visible');
-  assert.equal(await evaluate("document.querySelectorAll('.combo-course').length"),8);
+  assert.equal(await evaluate("document.querySelectorAll('.combo-reference__course').length"),12);
+  assert.equal(await evaluate("getComputedStyle(document.querySelector('.combo-investment')).visibility"),'visible');
   await screenshot('mobile-sem-javascript');await send('Emulation.setScriptExecutionDisabled',{value:false});
   assert.deepEqual(errors,[],'Erros no navegador');
-  await writeFile(`${evidence}/report.json`,JSON.stringify({date:new Date().toISOString(),url,viewports:results,navigation,courses:expected,errors,checks:['Textos exatos e descrições consistentes','Menu inicial e redes sem destino fictício','13 cursos, 12 destinos únicos, prioridade Entre Fios e Cristais','Combo em grade 4/2/1 sem condições inventadas','Solare separado de cursos, preço correto, foto e contato pendentes','Carrossel geral com setas, teclado, arraste e toque','Galeria ampliada e retorno de foco','Âncoras, histórico, movimento reduzido e conteúdo sem JavaScript']},null,2));
-  console.log(`QA cliente 19/10 aprovada em ${results.length} larguras. Evidências: ${evidence}`);
+  await writeFile(`${evidence}/report.json`,JSON.stringify({date:new Date().toISOString(),url,viewports:results,navigation,courses:expected,combo:expectedCombo,errors,checks:['Textos exatos e descrições consistentes','Menu inicial com acesso ao Super Combo e redes oficiais','13 cursos, 11 destinos únicos, Entre Fios e Cristais primeiro, Imperatriz segundo e Colares em Fios terceiro','Super Combo conforme ReferenciaSuperCombo.jpeg: 12 cursos em duas colunas, 21 modelos de brincos, 5 de colares e valores exatos','Encomendas personalizadas com botão do WhatsApp, sem produtos, preços ou telefone visível','Carrossel geral com setas, teclado, arraste e toque','Âncoras, histórico, movimento reduzido e conteúdo sem JavaScript']},null,2));
+  console.log(`QA aprovada em ${results.length} larguras. Evidências: ${evidence}`);
 } finally {try{await send('Browser.close');}catch{}browser.kill();}

@@ -3,8 +3,9 @@ import { Icon } from "./icon";
 
 export function UniverseMenu() {
   const entries = [
+    { icon: "materials" as const, title: "Super Combo de Crochê", description: "Explore a proposta e os detalhes do Super Combo.", href: "#combo" },
     { icon: "courses" as const, title: "Cursos de crochê", description: "Aprenda novas técnicas e crie peças autorais.", href: "#cursos" },
-    { icon: "jewel" as const, title: "Encomende suas peças", description: "Conheça as joias artesanais e solicite sua encomenda.", href: "#encomendas" },
+    { icon: "jewel" as const, title: "Encomende com a Mariah", description: "Peça sua joia artesanal direto com quem faz.", href: "#encomendas" },
     { icon: "youtube" as const, title: "Meu canal no YouTube", description: "Inspire-se com tutoriais, dicas e conteúdos criativos.", href: site.links.youtube },
     { icon: "instagram" as const, title: "Acompanhe meu trabalho", description: "Veja novidades, lançamentos e bastidores do ateliê.", href: site.contact.instagram },
   ];

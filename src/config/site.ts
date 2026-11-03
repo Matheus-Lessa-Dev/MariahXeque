@@ -2,8 +2,8 @@ import { courses } from "./courses";
 
 /**
  * Fonte única de conteúdo. null = informação ainda não confirmada.
- * Textos da referência e capas não confirmam a composição da oferta.
- * Catálogo e textos autorizados na etapa 1.5; condições ausentes seguem pendentes.
+ * Super Combo transcrito da referência solicitada em 03/11/2026.
+ * Condições não informadas na referência seguem pendentes.
  */
 export type Course = { title: string; description: string; image?: string };
 export type Testimonial = { quote: string; author: string; authorized: boolean };
@@ -59,17 +59,31 @@ export const site = {
   },
   combo: {
     eyebrow: "Seu próximo capítulo no crochê",
-    title: "Muito além do crochê.\nUm universo de possibilidades.",
-    description: "Explore diferentes técnicas, aprenda a criar joias e acessórios artesanais e amplie suas possibilidades criativas com uma coleção completa de cursos em um só lugar.",
-    // Exemplos de técnicas, não confirmação de inclusão na oferta.
-    previewCourseIds: ["glow", "flowers", "ariel", "eloa-camelia", "elo-folha-esther", "fios-em-festa", "colares", "iris"],
+    title: "Super Combo de Crochê",
+    description: "Tudo o que você precisa para explorar novas técnicas e criar joias e acessórios artesanais em crochê.",
     topics: [
       { number: "01", title: "Aprendizado passo a passo", description: "Aulas com técnicas do básico ao avançado para acompanhar cada etapa da criação." },
       { number: "02", title: "Modelos para explorar", description: "Modelos exclusivos selecionados e atualizações futuras para ampliar suas possibilidades no crochê." },
       { number: "03", title: "Materiais e acabamento", description: "Orientação de materiais e atenção aos detalhes para construir peças com cuidado." },
     ],
     imageCaption: "O feito à mão tem uma beleza própria.",
-    confirmedCourses: [] as Course[],
+    // Textos e composição da referência fornecida e solicitada em 03/11/2026.
+    confirmedCourses: [
+      { title: "Fios em Festa", description: "Brincos com flores" },
+      { title: "Imperatriz", description: "Bracelete e brinco" },
+      { title: "Ponto de Luz", description: "Brincos com pedraria" },
+      { title: "Colares em Fios", description: "Colares artesanais" },
+      { title: "Trio de Flores", description: "3 modelos de brincos" },
+      { title: "Fio Metalizado", description: "5 modelos de brincos" },
+      { title: "Brincos Clássicos", description: "Modelos atemporais" },
+      { title: "Bolsas em Crochê", description: "Modelos exclusivos" },
+      { title: "Braceletes em Fios", description: "Modelos sofisticados" },
+      { title: "Técnicas Especiais", description: "Acabamentos e detalhes" },
+      { title: "Acessórios Modernos", description: "Peças versáteis" },
+      { title: "Combinações Criativas", description: "Mix de técnicas" },
+    ] satisfies Course[],
+    earringModelCount: 21,
+    necklaceModelCount: 5,
     lessonCount: null as number | null,
     modelCount: null as number | null,
     materials: null as string[] | null,
@@ -126,15 +140,18 @@ export const site = {
     eyebrow: "Dê forma ao que você imagina",
     title: "Seu próximo projeto\ncomeça com um ponto.",
     description: "Explore o Super Combo e encontre também cursos individuais para o seu próximo projeto. Escolha o aprendizado que combina com o seu momento.",
-    price: null as string | null,
-    installments: null as string | null,
+    // Valores transcritos da referência solicitada pelo usuário em 03/11/2026.
+    price: "R$ 649,90" as string | null,
+    installments: "12x de R$ 67,21" as string | null,
+    installmentCount: 12,
+    installmentAmount: "R$ 67,21",
     interest: null as string | null,
     paymentMethods: null as string | null,
-    checkoutUrl: null as string | null,
+    checkoutUrl: "https://pay.hotmart.com/B99761164L?sck=HOTMART_MEM_CA&off=wdj5gmv7&bid=1793705416381" as string | null,
     guarantee: null as string | null,
     refund: null as string | null,
     promotion: null as { text: string; endsAt: string } | null,
-    cta: "Quero o Super Combo",
+    cta: "Quero meu Super Combo",
     fallbackCta: "Explorar cursos individuais",
     unavailableMessage: "A compra do Super Combo ainda não está disponível nesta página. Conheça os cursos individuais pelo catálogo.",
     footnote: "Feito à mão. Aprendido ponto a ponto.",
@@ -145,7 +162,7 @@ export const site = {
     description: "Sobre os cursos, o Super Combo e o seu aprendizado.",
     items: [
       { question: "Qual é a proposta do Super Combo de Crochê?", answer: "A proposta é ensinar a criar brincos, colares e acessórios de crochê, desenvolvendo técnica, criatividade e acabamento, além de explorar possibilidades de comercialização das peças." },
-      { question: "Os cursos do catálogo fazem parte do Super Combo?", answer: "O catálogo apresenta cursos individuais, cada um com sua página oficial na Hotmart. A composição específica do Super Combo ainda não está informada nesta página; não considere os 11 cursos automaticamente incluídos." },
+      { question: "Os cursos do catálogo fazem parte do Super Combo?", answer: "O catálogo apresenta ofertas individuais. Consulte a lista de 12 cursos na seção Super Combo para conhecer a composição desta oferta." },
       { question: "O que as imagens da galeria mostram?", answer: "A galeria mostra referências de peças relacionadas aos cursos identificados nas legendas. Elas ajudam a visualizar o aprendizado e não definem a composição do Super Combo." },
       { question: "Posso criar peças para vender?", answer: "A comercialização é uma das possibilidades para quem desenvolve o trabalho artesanal. As vendas e os resultados dependem de fatores como prática, dedicação, divulgação e mercado; não há promessa de renda ou de vendas garantidas." },
       { question: "Preciso saber crochê?", answer: "Há cursos que ensinam desde o começo, como Brinco Glow, Íris, Eloá e Camélia e Karol. Consulte a apresentação do curso escolhido na Hotmart para conhecer a proposta e os pré-requisitos específicos." },
@@ -160,14 +177,12 @@ export const site = {
     ] satisfies FaqItem[],
   },
   contact: {
-    url: null as string | null,
+    url: "https://wa.me/554584156998" as string | null,
+    phone: "+55 45 8415-6998",
     email: null as string | null,
     instagram: "https://www.instagram.com/mariahxeque/" as string | null,
     unavailableMessage: "O contato de atendimento está indisponível nesta página no momento.",
   },
-  physicalProducts: [
-    { id: "solare", name: "Conjunto Solare", price: "R$ 139,90 + frete", image: null as string | null, alt: "Conjunto Solare" },
-  ],
   legal: {
     termsUrl: null as string | null,
     privacyUrl: null as string | null,

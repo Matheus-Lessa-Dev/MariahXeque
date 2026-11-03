@@ -4,6 +4,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 // Somente conversão/otimização; fotografias originais preservadas em IMG.
 const selections = [
   ["05b402b6-055c-4f60-8a5d-731c5f439b69.jpg", "curso-entre-fios-e-cristais", "Capa oficial Entre Fios e Cristais, identificada visualmente"],
+  ["16736D1A-3C1C-49AC-83EF-639B4B77276F.png", "curso-imperatriz", "Capa oficial Coleção Imperatriz, indicada pelo usuário"],
   ["3F9F21D7-5AB6-4D90-B31B-2E4DBA12D4E2.png", "curso-blusa-atena", "Capa oficial quadrada Blusa Atena, identificada visualmente"],
   ["270fdf1c-c7aa-48ee-aeb9-dd1ac88d6a0a.jpg", "curso-fios-em-festa-oficial", "Capa oficial Fios em Festa fornecida no projeto"],
   ["4F39092C-2A30-4B3B-A355-3181AD3B7F03.png", "mariah-abertura", "Retrato exato da abertura da referência, com blusa preta"],

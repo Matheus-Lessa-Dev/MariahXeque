@@ -1,5 +1,13 @@
 ﻿# Progresso — Mariah Xeque
 
+## Encomendas diretas — 03/11/2026
+
+Ateliê dedicado a encomendas personalizadas diretamente com a Mariah, com título explícito, texto e botão centralizados e mensagem pronta no WhatsApp. O número fica apenas no destino do botão, sem aparecer no texto da página. Solare, preço e catálogo de peças foram retirados conforme solicitado. Menu e rodapé também refletem esse atendimento.
+
+## Super Combo — 03/11/2026
+
+Seção recriada em HTML/CSS conforme `IMG/ReferenciaSuperCombo.jpeg`, com tipografia grande, dourado e creme sobre preto, curvas decorativas, 12 cursos numerados em duas colunas e quadro de investimento. Textos e valores transcritos da imagem solicitada: 21 modelos de brincos, 5 de colares, 12x de R$ 67,21 ou R$ 649,90 à vista. Botão conectado ao checkout exato fornecido pelo usuário. Oferta integrada ao combo, substituindo a apresentação anterior e o quadro repetido ao final. Catálogo individual com Entre Fios e Cristais, Imperatriz e Colares em Fios nas três primeiras posições. O registro abaixo é histórico quando houver divergência.
+
 ## Alterações da cliente — 19/10/2026
 
 Referências examinadas visualmente antes das edições: os dois PNG de `referencias`, com menu e Super Combo. Abertura, introdução dos cursos e frases explicitamente atribuídas implementadas. Menu visual, grade do Combo e seção física Solare criados mantendo Georgia/Arial e a paleta aprovada. Carrossel geral preservado. Entre Fios e Cristais identificado pelo redirecionamento GET do link prioritário e cadastrado em primeiro. Blusa Atena incluída com capa oficial local, sem inventar URL. Total: 13 cursos, 12 links individuais reais. Sem atribuir cursos ou condições ilustrativas automaticamente ao Combo. Solare tem nome/preço fornecidos; foto e contato ausentes. Links sociais também pendentes. Oferta do Combo sem checkout permanece sem CTA ativo. Entrega em `docs/ALTERACOES-CLIENTE-1910.md`; publicação não realizada. Os registros abaixo são históricos e foram superados quando conflitantes.

@@ -2,7 +2,7 @@
 
 Projeto local em Next.js, React e TypeScript. O layout foi integralmente substituído pelo design de `mariah-independente.html`. A referência foi lida inteira e removida após a conversão, conforme solicitado. Sem publicação ou alteração do site original.
 
-Atualização da cliente de 19/10: abertura e descrições revisadas, menu visual inicial, Super Combo em grade e encomendas separadas dos cursos. O catálogo geral mantém o carrossel e os 11 cursos anteriores, com a inclusão de Entre Fios e Cristais (primeiro, com o link enviado) e Blusa Atena (link ainda pendente). Conjunto Solare está cadastrado como peça física. Fotografias e capas são locais. Sem header tradicional ou FAQ acrescentado.
+Atualização da cliente de 19/10: abertura e descrições revisadas, menu visual inicial, Super Combo em grade e encomendas separadas dos cursos. O catálogo geral mantém o carrossel, com Entre Fios e Cristais em primeiro, Coleção Imperatriz em segundo e Colares em Fios em terceiro. O menu “Explore o universo Mariah Xeque” tem acesso direto à seção do Super Combo. Após a exclusão de Bolsa Mikaela e inclusão de Imperatriz solicitadas em 03/11/2026, são 13 cursos e 11 links individuais; Imperatriz e Blusa Atena têm link ainda pendente. O ateliê recebe encomendas personalizadas pelo WhatsApp, sem catálogo de produtos ou preços. Fotografias e capas são locais. Sem header tradicional ou FAQ acrescentado.
 
 ## Executar
 
@@ -33,13 +33,12 @@ Em outra máquina, execute `npm ci` primeiro. Este workspace também tem cache e
 | Layout convertido | `src/app/page.tsx`, `src/app/globals.css` |
 | Carrosséis e galeria | `src/components/carousel.tsx`, `src/components/gallery.tsx` |
 | Encomendas personalizadas | `src/components/atelier.tsx` |
-| Conjunto Solare, foto e preço | `site.physicalProducts` |
 | Redes sociais e atendimento | `site.links.youtube`, `site.contact` |
 | Âncoras e compensação do cabeçalho | `src/components/page-effects.tsx`, `src/lib/internal-navigation.ts` |
 | Fotografias originais | `IMG/` |
 | Otimização e manifesto | `scripts/prepare-images.mjs`, `public/images/manifest.json` |
 
-`null` representa informação não confirmada. Os preços históricos não são uma oferta atual. O Club serve exclusivamente ao acesso das alunas. Sem checkout específico confirmado, o Super Combo informa a indisponibilidade da compra e não redireciona para outro produto. A grade demonstra técnicas, sem declarar inclusão dos cursos na oferta. Solare mantém preço próprio e não usa links dos cursos.
+O Super Combo foi recriado em 03/11/2026 conforme `IMG/ReferenciaSuperCombo.jpeg`, com título dourado e creme, 12 cursos em duas colunas, 21 modelos de brincos, 5 de colares e investimento de 12x de R$ 67,21 ou R$ 649,90 à vista. O botão usa o checkout Hotmart fornecido pelo usuário, com todos os parâmetros preservados. A oferta está integrada à seção do combo, sem repetição no fim da página. `null` representa informação ainda não informada. O Club serve ao acesso das alunas.
 
 O domínio público continua não preenchido e a página permanece `noindex, nofollow`. As pendências comerciais e de conteúdo constam em [PENDENCIAS.md](PENDENCIAS.md).
 
@@ -59,6 +58,6 @@ $env:QA_URL='http://127.0.0.1:3100'
 npm run qa
 ```
 
-A auditoria usa Chrome/Edge local. Capturas e relatório em `.work/qa-reference/`. Verifica 360, 390, 768, 1024, 1440 e 1920 px, destinos, imagens, carrosséis, teclado, mouse, toque, galeria, encomendas, âncoras, histórico, movimento reduzido e conteúdo sem JavaScript. `QA_EVIDENCE_DIR` e `QA_BROWSER_PATH` permitem escolher pasta e navegador.
+A auditoria usa Chrome/Edge local. Capturas e relatório em `.work/qa-reference/`. Verifica 360, 390, 768, 1024, 1440 e 1920 px, textos e preços exatos do Super Combo, checkout, ordem dos cursos, imagens, carrossel, teclado, mouse, toque, encomendas, âncoras, histórico, movimento reduzido e conteúdo sem JavaScript. `QA_EVIDENCE_DIR` e `QA_BROWSER_PATH` permitem escolher pasta e navegador.
 
 Entrega atual: [docs/ALTERACOES-CLIENTE-1910.md](docs/ALTERACOES-CLIENTE-1910.md). Evidências desta alteração em `.work/qa-cliente-1910/`. Os documentos das etapas anteriores registram o histórico e não descrevem o layout atual.
